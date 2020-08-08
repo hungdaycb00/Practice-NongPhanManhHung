@@ -94,13 +94,26 @@
                     <input type="submit" value="add task" name="add_task" data-target="#exampleModal">
                 </form>
 
-                @if(count($task) > 0)
+                @if(count($tasks) > 0)
                     Current task
 
                     <table>
-                        <thread>
-                            
-                        </thread>
+                        @foreach($tasks as $p)
+                        <tr>
+                            <td>
+                                {{$p->name}}
+                            </td>
+                            <td>
+                                {{$p->price}}
+                            </td>
+                            <td>
+                                {{$p->desciption}}
+                            </td>
+                            <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('delete_task/'.$p->id)}}">
+                                <i class="fa fa-times text-danger text"></i>
+                            </a>
+                        </tr>
+                        @endforeach
                     </table>
                 @endif
             </div>

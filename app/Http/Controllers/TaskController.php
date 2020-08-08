@@ -2,6 +2,7 @@
 
 
 namespace App\Http\Controllers;
+use App\list_post;
 use App\Task;
 use App\Http\Controllers;
 use Illuminate\Auth\Events\Validated;
@@ -23,8 +24,13 @@ class TaskController extends BaseController
         return redirect('/');
     }
     public function listTask(){
-        $task = Task::orderBy('id','desc')->get();
-        return view('welcome',['welcome'=>$task]);
+        $tasks = Task::orderBy('id','desc')->get();
+        return view('welcome',['welcome'=>$tasks]);
+    }
+    public function deleteTask($id){
+        Task::where('id', $id)->delete();
+        return Redirect::to('/');
+
     }
 
 }
