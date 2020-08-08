@@ -1,5 +1,6 @@
 @extends('user_layout')
 @section('content')
+    <h1>Update Task</h1>
                 @foreach($tasks as $p)
                 <form action="{{URL::to('update_task/'.$p->id)}}" method="post">
                     {{csrf_field()}}
@@ -10,4 +11,5 @@
                     <input type="submit" class="btn btn-success" value="Update Task" name="update_task" data-target="#exampleModal">
                 </form> <br><br>
                 @endforeach
+
 @endsection
