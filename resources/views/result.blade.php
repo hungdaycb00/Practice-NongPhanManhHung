@@ -24,5 +24,6 @@
                     </tbody>
 
                 </table>
+    <a href="{{URL::to('/')}}"><input type="submit" value="Back"></a>
 
                 @endsection
