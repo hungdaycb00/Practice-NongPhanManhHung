@@ -84,16 +84,25 @@
                     Laravel
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <form action="{{URL::to('add_task')}}" method="post">
+                    {{csrf_field()}}
+                    <input type="text" class="ggg" name="name" placeholder="name" required=""><br>
+                    <input type="text" class="ggg" name="price" placeholder="price" required=""><br>
+                    <input type="text" class="ggg" name="desc" placeholder="desc" required=""><br>
+
+                    <div class="clearfix"></div>
+                    <input type="submit" value="add task" name="add_task" data-target="#exampleModal">
+                </form>
+
+                @if(count($task) > 0)
+                    Current task
+
+                    <table>
+                        <thread>
+                            
+                        </thread>
+                    </table>
+                @endif
             </div>
         </div>
     </body>
