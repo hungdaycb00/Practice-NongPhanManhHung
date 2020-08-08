@@ -110,7 +110,7 @@
                                 {{$p->desciption}}
                             </td>
                             <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('delete_task/'.$p->id)}}">
-                                <i class="fa fa-times text-danger text"></i>
+                                <input type="submit" value="delete value" name="delete_value">
                             </a>
                         </tr>
                         @endforeach
