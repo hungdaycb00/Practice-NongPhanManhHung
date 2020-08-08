@@ -29,7 +29,7 @@ class TaskController extends BaseController
     }
     public function deleteTask($id){
         Task::where('id', $id)->delete();
-        return Redirect::to('/');
+        return redirect('/');
 
     }
 
