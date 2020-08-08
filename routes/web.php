@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','TaskController@welcome');
+//Route::get('/','TaskController@welcome');
 
 //view
 Route::get('/','TaskController@listTask');
