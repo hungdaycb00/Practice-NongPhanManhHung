@@ -95,7 +95,7 @@
                 </form>
 
                 @if(count($tasks) > 0)
-                    Current task
+                    <br>Current task    <br>
 
                     <table>
                         @foreach($tasks as $p)
@@ -109,12 +109,18 @@
                             <td>
                                 {{$p->desciption}}
                             </td>
-                            <a href="{{URL::to('edit_task/'.$p->id)}}">
-                                <input type="submit" value="edit value" name="edit_value">
-                            </a>
-                            <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('delete_task/'.$p->id)}}">
-                                <input type="submit" value="delete value" name="delete_value">
-                            </a>
+                            <td>
+                                <a href="{{URL::to('edit_task/'.$p->id)}}">
+                                    <input type="submit" value="edit value" name="edit_value">
+                                </a>
+                            </td>
+                            <td>
+                                <a onclick="return confirm('Are you sure to delete ?')" href="{{URL::to('delete_task/'.$p->id)}}">
+                                    <input type="submit" value="delete value" name="delete_value">
+                                </a>
+                            </td>
+
+
                         </tr>
                         @endforeach
                     </table>
